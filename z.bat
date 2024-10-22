@@ -6,7 +6,7 @@ set "SOURCE_DIR=%CD%"
 :: 현재 작업 디렉토리의 부모 디렉토리를 대상 디렉토리로 설정
 for %%I in ("%SOURCE_DIR%") do set "DEST_DIR=%%~dpI"
 :: 제외할 기본 디렉토리들 설정
-set "EXCLUDE=node_modules,.git"
+set "EXCLUDE=node_modules,.git,.next"
 
 :parse
 if "%~1"=="" goto :main
@@ -23,7 +23,7 @@ echo.
 echo Options:
 echo   -s : Source directory (기본값: 현재 디렉토리)
 echo   -d : Destination directory (기본값: 부모 디렉토리)
-echo   -e : Excluding directories (기본값: node_modules,.git)
+echo   -e : Excluding directories (기본값: node_modules,.git,.next)
 echo   -h : Show this help message
 goto :eof
 
